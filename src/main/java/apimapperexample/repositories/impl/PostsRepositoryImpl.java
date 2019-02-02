@@ -28,14 +28,14 @@ public class PostsRepositoryImpl implements PostsRepository {
 	@Override
 	public Post getPost(final Integer id) {
 		final GetPost getPost = GetPost.withDefaultImplementation(id);
-		this.errors.consume(getPost);
+		this.errors.log(getPost);
 		return getPost.getPost();
 	}
 
 	@Override
 	public List<Post> getPosts(final Integer page, final Integer size) {
 		final GetAllPosts getAllPosts = GetAllPosts.withDefaultImplementation();
-		this.errors.consume(getAllPosts);
+		this.errors.log(getAllPosts);
 		final PaginatePosts paginatePosts = PaginatePosts.withDefaultImplementation(getAllPosts.getPosts(), page, size);
 		return paginatePosts.getPaginatedPosts();
 	}

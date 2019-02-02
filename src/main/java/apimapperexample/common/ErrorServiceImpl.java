@@ -18,7 +18,7 @@ public class ErrorServiceImpl implements ErrorService {
 	}
 
 	@Override
-	public void consume(BasicOperation operation) {
+	public void log(BasicOperation operation) {
 		operation.getErrors().forEach(exception -> System.err.println(exception));
 	}
 

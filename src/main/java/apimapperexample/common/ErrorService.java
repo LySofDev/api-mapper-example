@@ -11,6 +11,6 @@ public interface ErrorService {
 	
 	void consume(final List<Exception> exceptions);
 	
-	void consume(final BasicOperation operation);
+	void log(final BasicOperation operation);
 	
 }
